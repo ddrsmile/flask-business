@@ -1,6 +1,7 @@
 # project/models.py
 
 from project import db
+import datetime
 
 class Contact(db.Model):
   __tablename__ = "contacts"
@@ -11,6 +12,10 @@ class Contact(db.Model):
   email = db.Column(db.String, nullable=False)
   subject = db.Column(db.String)
   message = db.Column(db.String)
+  status = db.Column(db.Integer, default = 0)
+  open_date = db.Column(db.DateTime, default=datetime.datetime.utcnow())
+  read_date = db.Column(db.DateTime)
+  closed_date = db.Column(db.DateTime)
 
   def __init__(self, name, company, email, subject, message):
     self.name = name
@@ -21,3 +26,22 @@ class Contact(db.Model):
 
   def __repr__(self):
     return '<name {0}>'.format(self.name)
+
+class User(db.Model):
+
+  __tablename__ = 'users'
+
+  id = db.Column(db.Integer, primary_key=True)
+  name = db.Column(db.String, unique=True, nullable=False)
+  email = db.Column(db.String, unique=True, nullable=False)
+  password = db.Column(db.String, nullable=False)
+  role = db.Column(db.String, nullable=False)
+
+  def __init__(self, name, email, password, role):
+    self.name = name
+    self.email = email
+    self.passwrod = password
+    self.role = role
+
+  def __repr__(self):
+    return '<User {0}>'.format(self.name)
