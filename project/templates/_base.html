@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Welcome to XXX Law Office</title>
+    <!-- style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- style -->
+    {% block head_content %}
+    {% endblock %}
+  </head>
+  <body>
+    <div>
+      <p><a href="/">Home</a></p>
+      <p><a href="/about">About</a></p>
+      <p><a href="/service">Service</a></p>
+      <p><a href="/access">Access</a></p>
+      <p><a href="/contact">Contact</a></p>
+    </div>
+    <div class="container">
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="footer">
+      <hr>
+      <p><a href="#">Design by Ryu</a></p>
+    </div>
+    <!-- script -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- script -->
+  </body>
+</html>
