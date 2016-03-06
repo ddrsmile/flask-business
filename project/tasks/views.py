@@ -36,11 +36,11 @@ def closed_tasks():
 @login_required
 def tasks():
   return render_template('tasks.html',
-                         form=AddTaskForm(request.form),
                          open_tasks=open_tasks(),
                          read_tasks=read_tasks(),
                          closed_tasks=closed_tasks(),
-                         username=session['name'])
+                         username=session['name'],
+                         user_id=session['user_id'])
 
 @tasks_blueprint.route('/add/', methods=['GET', 'POST'])
 @login_required

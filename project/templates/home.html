@@ -1,5 +1,31 @@
 {% extends "_base.html" %}
+
+{% block head_content %}
+<link href="{{ url_for('static', filename='css/carousel.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
-<h1>XXX Law Office</h1>
-This is Home Page
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1" class></li>
+    <li data-target="#myCarousel" data-slide-to="2" class></li>
+    <li data-target="#myCarousel" data-slide-to="3" class></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="{{ url_for('static', filename='img/home/Lake.jpg') }}" alt="Lake">
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='img/home/Mountain-Range.jpg') }}" alt="Mountain-Range">
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='img/home/Mt-Fuji.jpg') }}" alt="Mt-Fuji">
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='img/home/Pink-Forest.jpg') }}" alt="Pink-Forest" > 
+    </div>
+  </div>
+</div>
+
 {% endblock %}

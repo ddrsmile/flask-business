@@ -1,44 +1,30 @@
 {% extends "_base.html" %}
+{% block head_content %}
+<link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+{% endblock %}
 {% block content %}
-
-<h1>Contact Us!</h1>
-
+<h1 class="form-contact form-contact-heading">Contact Us!</h1>
 {% if success %}
   <p><h3>Thank you for your message. We'll get back to you soon!!</h3></p>
 {% else %}
-  <h3>Please leave your message. Thank you!</h3>
-  <form method="POST" action="{{ url_for('contact.contact') }}">
+  <form method="POST" action="{{ url_for('contact.contact') }}" class="form-contact" role="form">
     {{ form.csrf_token }}
-    <p>
-    {{ form.name(placeholder="User Name") }}
-    {% if form.name.errors %}
-    <span class="error">
-      {% for error in form.name.errors %}
-        {{ error }}
-      {% endfor %}
-    </span>
-    {% endif %}
-    </p>
-    <p>
-    {{ form.company(placeholder="Company Name") }}
-    </p>
-    <p>
-    {{ form.email(placeholder="Email Address") }}
-    {% if form.email.errors %}
-    <span class="error">
-      {% for error in form.email.errors %}
-        {{ error }}
-      {% endfor %}
-    </span>
-    {% endif %}
-    </p>
-    <p>
-    {{ form.subject }}
-    </p>
-    <p>
-    {{ form.message }}
-    </p>
-    <input type="submit" value="Submit">
+    {% for error in form.name.errors %}
+    <div class="alert alert-danger" role="alert">
+      <strong>Error!</strong> Your Name: {{error}}
+    </div>
+    {% endfor %}
+    {% for error in form.email.errors %}
+    <div class="alert alert-danger" role="alert">
+      <strong>Error!</strong> Email Address: {{error}}
+    </div>
+    {% endfor %} 
+    {{ form.name(placeholder="Your Name", class="form-control form-usrname") }}
+    {{ form.company(placeholder="Company Name", class="form-control form-middle-blank") }}
+    {{ form.email(placeholder="Email Address", class="form-control form-middle-blank") }}
+    {{ form.subject(placeholder="Subject", class="form-control form-middle-blank") }}
+    {{ form.message(class="form-control form-message") }}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
 {% endif %}
 {% endblock %}

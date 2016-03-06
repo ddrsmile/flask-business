@@ -12,6 +12,8 @@ class Contact(db.Model):
   email = db.Column(db.String, nullable=False)
   subject = db.Column(db.String)
   message = db.Column(db.String)
+  response = db.Column(db.String)
+  user_id = db.Column(db.Integer)
   status = db.Column(db.Integer, default = 0)
   open_date = db.Column(db.DateTime, default=datetime.datetime.utcnow())
   read_date = db.Column(db.DateTime)
