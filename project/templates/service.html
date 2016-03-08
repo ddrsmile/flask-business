@@ -1,5 +1,8 @@
 {% extends "_base.html" %}
 {% block content %}
+<div style="height:300px; overflow:hidden;">
+  <img src="{{ url_for('static', filename='img/home/Lake.jpg') }}" alt="Lake" style="min-width:100%;height:500px;">
+</div>
 <h1>Service</h1>
 This is Service page
 {% endblock %}

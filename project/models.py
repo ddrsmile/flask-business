@@ -8,10 +8,9 @@ class Contact(db.Model):
 
   contact_id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String, nullable=False)
-  company = db.Column(db.String)
   email = db.Column(db.String, nullable=False)
-  subject = db.Column(db.String)
-  message = db.Column(db.String)
+  subject = db.Column(db.String, nullable=False)
+  message = db.Column(db.String, nullable=False)
   response = db.Column(db.String)
   user_id = db.Column(db.Integer)
   status = db.Column(db.Integer, default = 0)
@@ -19,9 +18,8 @@ class Contact(db.Model):
   read_date = db.Column(db.DateTime)
   closed_date = db.Column(db.DateTime)
 
-  def __init__(self, name, company, email, subject, message):
+  def __init__(self, name, email, subject, message):
     self.name = name
-    self.company = company
     self.email = email
     self.subject = subject
     self.message = message

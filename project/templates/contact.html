@@ -1,30 +1,94 @@
 {% extends "_base.html" %}
 {% block head_content %}
-<link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+<!--<link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet"> -->
+<link href="{{ url_for('static', filename='css/head_img.css') }}" rel="stylesheet">
 {% endblock %}
+
 {% block content %}
-<h1 class="form-contact form-contact-heading">Contact Us!</h1>
-{% if success %}
-  <p><h3>Thank you for your message. We'll get back to you soon!!</h3></p>
-{% else %}
-  <form method="POST" action="{{ url_for('contact.contact') }}" class="form-contact" role="form">
-    {{ form.csrf_token }}
-    {% for error in form.name.errors %}
-    <div class="alert alert-danger" role="alert">
-      <strong>Error!</strong> Your Name: {{error}}
-    </div>
-    {% endfor %}
-    {% for error in form.email.errors %}
-    <div class="alert alert-danger" role="alert">
-      <strong>Error!</strong> Email Address: {{error}}
-    </div>
-    {% endfor %} 
-    {{ form.name(placeholder="Your Name", class="form-control form-usrname") }}
-    {{ form.company(placeholder="Company Name", class="form-control form-middle-blank") }}
-    {{ form.email(placeholder="Email Address", class="form-control form-middle-blank") }}
-    {{ form.subject(placeholder="Subject", class="form-control form-middle-blank") }}
-    {{ form.message(class="form-control form-message") }}
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
-{% endif %}
+<div class="head-img-div">
+  <img src="{{ url_for('static', filename='img/home/Mt-Fuji.jpg') }}" alt="Mt-Fuji" class="head-img">
+</div>
+<div class="container" style="position: relative">
+  <h1>Contact Us!</h1>
+  <hr>
+  {% if success %}
+    <p><h2>Thank you for your message. We'll get back to you soon!!</h2></p>
+  {% else %}
+    <form method="POST" action="{{ url_for('contact.contact') }}" class="form-horizontal" role="form" id="contact-form">
+      {{ form.csrf_token }}
+      <div class="form-group has-feedback">
+        <label class="col-sm-2 control-label" for="name">Name</label>
+        <div class="col-sm-10">
+          {{ form.name(placeholder="Your name", class="form-control") }}
+          <span class="glyphicon form-control-feedback" id="name1"></span>
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label class="col-sm-2 control-label" for="email">Email Address</label>
+        <div class="col-sm-10">
+          {{ form.email(placeholder="Your email address", class="form-control") }}
+          <span class="glyphicon form-control-feedback" id="email1"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="subject">Subject</label>
+        <div class="col-sm-10">
+          {{ form.subject(class="form-control") }}
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label class="col-sm-2 control-label" for="message">Message</label>
+        <div class="col-sm-10">
+          {{ form.message(placeholder="The message you want to send to us.", class="form-control") }}
+          <span class="glyphicon form-control-feedback" id="message1"></span>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary btn-lg" style="position:absolute; right: 15px;">Submit</button>
+      </div>
+    </form>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block js_content %}
+<script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+<script type=text/javascript>
+    $("form").validate({
+        rules: {
+            name: {
+                minlength: 3,
+                maxlength: 20,
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            message: {
+                minlength: 3,
+                required: true
+            }
+        },
+        highlight: function(element) {
+        var id_attr = "#" + $( element ).attr("id") + "1";
+        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+        $(id_attr).removeClass('glyphicon-ok').addClass('glyphicon-remove');
+        },
+        unhighlight: function(element) {
+        var id_attr = "#" + $( element ).attr("id") + "1";
+        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+        $(id_attr).removeClass('glyphicon-remove').addClass('glyphicon-ok'); 
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if(element.length) {
+              error.insertAfter(element);
+            } else {
+              error.insertAfter(element);
+            }
+        }
+    });
+</script>
 {% endblock %}

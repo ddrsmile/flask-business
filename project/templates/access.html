@@ -1,16 +1,55 @@
 {% extends "_base.html" %}
 {% block head_content %}
-{{ mymap.js }}
+<link href="{{ url_for('static', filename='css/head_img.css') }}" rel="stylesheet">
+<style>
+  .head-img {
+    top: -200px;
+  }
+  #map {
+    width: 450px;
+    height: 300px;
+  }
+</style>
 {% endblock %}
 {% block content %}
-<h1>Access</h1>
-<p><h3>Here We Are!!</h3></p>
-
-
-<div>
-{{ mymap.html }}
+<div class="head-img-div">
+  <img src="{{ url_for('static', filename='img/home/Mountain-Range.jpg') }}" alt="Mountain-Range" class="head-img">
 </div>
-<hr>
-<p>Address: 〒120-0026 Tokyo, Adachi, Senjuasahichō, 42、千住旭町</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Address</h2>
+      <div>
+        <p>〒120-0026 東京都足立区千住旭町42-1</p>
+        <p>〒120-0026 42-1, Senjuasahichō, Adachi-ku, Tokyo</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>Map</h2>
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
 
+<script type=text/javascript>
+  var map;
+  function init_map() {
+    var my_lat_lng = {lat: 35.749516, lng: 139.805119};
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: my_lat_lng,
+      zoom: 17
+    });
+
+    var info_win = new google.maps.InfoWindow({
+      content: "<strong>Here we are !!</strong>",
+    });
+
+    var marker = new google.maps.Marker({
+      position: my_lat_lng,
+      map: map
+    });
+    info_win.open(map, marker);
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4quHatag-q_YEqDUajFqtUfhAyLvDl0Q&callback=init_map" async defer></script>
 {% endblock %}

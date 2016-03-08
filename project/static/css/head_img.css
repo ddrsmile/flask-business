@@ -1,0 +1,11 @@
+.head-img-div {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.head-img {
+  position: absolute;
+  min-width: 100%;
+  height: 500px;
+}

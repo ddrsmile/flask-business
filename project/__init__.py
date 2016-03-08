@@ -5,14 +5,12 @@ from flask import Flask, render_template, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.bcrypt import Bcrypt
 from flask.ext.mail import Message, Mail
-from flask.ext.googlemaps import GoogleMaps
 
 app = Flask(__name__)
 app.config.from_pyfile('_config.py')
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 mail = Mail(app)
-GoogleMaps(app)
 
 # setting basic info of message to be sent
 msg = Message(sender='dev.nansa@gmail.com', recipients=['nansaryu@gmail.com'])

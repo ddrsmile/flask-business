@@ -6,7 +6,6 @@
 
 from functools import wraps
 from flask import flash, redirect, render_template, request, session, url_for, Blueprint
-from flask.ext.googlemaps import Map
 
 ################
 #### config ####
@@ -45,16 +44,7 @@ def service():
 
 @main_blueprint.route('/access')
 def access():
-  lat = 35.749516
-  lng = 139.805119
-  mymap = Map(
-      identifier="view-side",
-      lat = lat,
-      lng = lng,
-      markers=[(lat, lng)],
-      zoom = 16
-      )
-  return render_template('access.html', mymap = mymap)
+  return render_template('access.html')
 
 @main_blueprint.route('/about')
 def about():

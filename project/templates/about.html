@@ -1,5 +1,16 @@
 {% extends "_base.html" %}
+{% block head_content %}
+<link href="{{ url_for('static', filename='css/head_img.css') }}" rel="stylesheet">
+<style>
+  .head-img {
+    top: -100px;
+  }
+</style>
+{% endblock %}
 {% block content %}
-<h1>About</h1>
+<div class="head-img-div">
+  <img src="{{ url_for('static', filename='img/home/Pink-Forest.jpg') }}" alt="Pink-Forest" class="head-img">
+</div>
+<h1>About Us</h1>
 This is About page
 {% endblock %}

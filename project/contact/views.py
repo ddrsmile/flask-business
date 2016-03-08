@@ -58,7 +58,6 @@ def contact():
   if request.method == 'POST':
     if form.validate_on_submit():
       new_contact = Contact(form.name.data,
-                            form.company.data,
                             form.email.data,
                             form.subject.data,
                             form.message.data)
