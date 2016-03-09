@@ -1,7 +1,10 @@
 {% extends "_base.html" %}
 
 {% block head_content %}
-<link href="{{ url_for('static', filename='css/carousel.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+<style>
+  #twitter-widget-0 {height:670px !important;}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -29,41 +32,61 @@
     </div>
   </div>
 </div>
+<div class="marketing">
+  <div class="row" style="margin-left:10px; margin-right: 10px;">
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="img-circle" src="{{ url_for('static', filename='img/home/galaxy_140.jpg') }}" alt="temp" width="140" height="140">
+          <h2>Galaxy</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-circle" src="{{ url_for('static', filename='img/home/ntu_cake_140.jpg') }}" alt="temp" width="140" height="140  ">
+          <h2>NTU</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="img-circle" src="{{ url_for('static', filename='img/home/tree_140.jpg') }}" alt="temp" width="140" height="140">
+          <h2>Tree</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-circle" src="{{ url_for('static', filename='img/home/park_140.jpg') }}" alt="temp" width="140" height="140  ">
+          <h2>Park</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+      </div>
+    </div>
+  <div class="col-lg-3">
+    <a class="twitter-timeline" href="https://twitter.com/dev_nansa" 
+       data-widget-id="707561651705225216"
+       data-chrome="nofooter noborders noscrollbar"
+       >@dev_nansa 發送的推文</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+</div>
+  <hr class="featurette-divider">
 <div class="container marketing">
-  <div class="row">
-    <div class="col-lg-4">
-      <img class="img-circle" src="{{ url_for('static', filename='img/temp.gif') }}" alt="temp" width="140" height="140">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-    </div>
-    <div class="col-lg-4">
-      <img class="img-circle" src="{{ url_for('static', filename='img/temp.gif') }}" alt="temp" width="140" height="140">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-    </div>
-    <div class="col-lg-4">
-      <img class="img-circle" src="{{ url_for('static', filename='img/temp.gif') }}" alt="temp" width="140" height="140">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-    </div>
-  </div>
-  <hr class="featurette-divider">
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
       <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/temp.gif') }}" alt="temp" width="500" height="500">
+      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/23.jpg') }}" alt="temp" width="500" height="500">
     </div>
   </div>
   <hr class="featurette-divider">
   <div class="row featurette">
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/temp.gif') }}" alt="temp" width="500" height="500">
+      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/26.jpg') }}" alt="temp" width="500" height="500">
     </div>
     <div class="col-md-7">
       <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -77,30 +100,11 @@
       <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/temp.gif') }}" alt="temp" width="500" height="500">
+      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/58.jpg') }}" alt="temp" width="500" height="500">
     </div>
   </div>
 </div>
-<!-- Button HTML (to Trigger Modal) -->
-    <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Launch Demo Modal</a>
-    
-    <!-- Modal HTML -->
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Confirmation</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Do you want to save changes you made to document before closing?</p>
-                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 {% endblock%}
+{% block js %}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endblock %}

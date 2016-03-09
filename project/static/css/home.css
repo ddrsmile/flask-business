@@ -1,143 +1,66 @@
-body { color: #444; font-family: Helvetica, sans-serif; margin: 0; background: #ECECEC; }
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
 
-
-ul {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
 }
 
-p {
-	margin-left: auto;
-	margin-right: auto;
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
 }
 
-a {
-	color: #c48ec8;
-	-webkit-transition: color 0.25s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-       -moz-transition: color 0.25s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-         -o-transition: color 0.25s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-            transition: color 0.25s cubic-bezier(0.860, 0.000, 0.070, 1.000); /* ease-in-out */
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
 }
 
-button {
-	color: #FFF;
-	font-size: 12px;
-	letter-spacing: 0.3em;
-	text-transform: uppercase;
-	border-radius: 4px;
-	cursor: pointer;
-	border: none;
-	/*background: #c48ec8; */
-	padding: 8px 14px;
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-6 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-6 p {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-ul.animate {
-	-webkit-transition: -webkit-transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-       -moz-transition: transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-         -o-transition: transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-            transition: transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); /* ease-in-out */	
+.marketing .col-lg-3 {
+  padding: 0 0 0 0;
 }
 
-.stage {
-	width: 76%;
-	margin: 0 auto;
-	padding: 0 12%;
-	text-align: center;
-	overflow: hidden;
-}
-	
-.sldr {
-	max-width: 825px;
-	margin: 0 auto;
-	overflow: visible;
-	position: relative;
-	clear: both;
-	display: block;
-}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
 
-.sldr > ul > li {
-	float: left;
-	display: block;
-	width: 825px;
-}
-
-div.skew {
-	max-width: 825px;
-	margin: 0 auto;
-
-	display: block;
-	overflow: hidden;
-
-	-webkit-transform: skewX(16deg);
-       -moz-transform: skewX(16deg);
-        -ms-transform: skewX(16deg);
-            transform: skewX(16deg);
-}
-
-div.skew > div.wrap {
-	display: block;
-	overflow: hidden;
-
-	-webkit-transform: skewX(-16deg);
-	   -moz-transform: skewX(-16deg);
-	    -ms-transform: skewX(-16deg);
-	        transform: skewX(-16deg);
-
-	margin-left: -10.1%;
-	width: 122%;
-}
-
-img {
-	max-width: 1000px;
-	width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
-}
-
-.selectors {
-	/*margin: 15px 0 0;*/
-}
-
-.selectors li {
-	font-size: 46px;
-	line-height: 32px;
-	display: inline;
-	padding: 0 2px;	
-}
-
-.selectors li a {
-	text-decoration: none;
-}
-
-.selectors li.focalPoint a {
-	color: #CCC;
-	cursor: default;
-}
-
-.captions div {
-	left: 200%;
-	position: fixed;
-	opacity: 0;
-
-	-webkit-transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-       -moz-transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-         -o-transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
-            transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); /* ease-in-out */
-}
-
-.captions div.focalPoint {
-	opacity: 1;
-	left: inherit;
-	position: static;
-}
-
-.clear {
-	display: block;
-	width: 100%;
-	height: 0px;
-	overflow: hidden;
-	clear: both;
+@media (min-width: 768px) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
 }
