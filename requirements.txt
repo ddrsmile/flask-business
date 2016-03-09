@@ -3,7 +3,6 @@ blinker==1.4
 cffi==1.5.2
 Flask==0.10.1
 Flask-Bcrypt==0.7.1
-Flask-GoogleMaps==0.1.9
 Flask-Mail==0.9.1
 Flask-SQLAlchemy==2.1
 Flask-WTF==0.12
