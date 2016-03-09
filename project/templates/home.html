@@ -69,7 +69,6 @@
        data-widget-id="707561651705225216"
        data-chrome="nofooter noborders noscrollbar"
        >@dev_nansa 發送的推文</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </div>
 </div>
   <hr class="featurette-divider">
@@ -80,13 +79,13 @@
       <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/23.jpg') }}" alt="temp" width="500" height="500">
+      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/23.png') }}" alt="temp" width="500" height="500">
     </div>
   </div>
   <hr class="featurette-divider">
   <div class="row featurette">
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/26.jpg') }}" alt="temp" width="500" height="500">
+      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/26.png') }}" alt="temp" width="500" height="500">
     </div>
     <div class="col-md-7">
       <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -100,11 +99,11 @@
       <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/58.jpg') }}" alt="temp" width="500" height="500">
+      <img class="featurette-image img-responsive center-block" src="{{ url_for('static', filename='img/home/58.png') }}" alt="temp" width="500" height="500">
     </div>
   </div>
 </div>
 {% endblock%}
-{% block js %}
+{% block js_content %}
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 {% endblock %}

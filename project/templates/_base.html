@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Welcome to Sample Office Website</title>
-    <link href="{{ url_for('static', filename='bootstrap-3.3.6-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
     {% block head_content %}
     {% endblock %}
@@ -46,7 +46,7 @@
       </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='bootstrap-3.3.6-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script type=text/javascript>
       jQuery(document).ready(function($){
           var cur = window.location.pathname;
